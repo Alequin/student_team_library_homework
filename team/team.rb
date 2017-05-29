@@ -37,4 +37,8 @@ class Team
     @players.push(player_to_add)
   end
 
+  def player_in_team?(name)
+    return @players.include?(name)
+  end
+
 end
