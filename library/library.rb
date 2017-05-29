@@ -27,6 +27,11 @@ class Library
     @books = books
   end
 
-  
+  def get_book_by_name(title)
+    for book in @books
+      return book if (book[:title] == title)
+    end
+    return nil
+  end
 
 end
