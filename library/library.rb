@@ -20,3 +20,13 @@
 # Create a method that changes the rental details of a book by
 # taking in the title of the book, the student renting it and the
 # date it's due to be returned.
+
+class Library
+
+  def initialize(books)
+    @books = books
+  end
+
+  
+
+end
