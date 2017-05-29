@@ -71,4 +71,18 @@ class TestLibrary < Minitest::Test
     assert_equal(new_book, @library.get_book_by_name(new_book[:title]))
   end
 
+  def test_change_rental_details
+    new_student = "Harry"
+    new_due_date = "20/12/16"
+    book_to_test = @books[0]
+    @library.change_rental_details(book_to_test[:title], new_student, new_due_date)
+
+    rental_details_after_change = @library.get_rental_details_of(book_to_test[:title])
+    rented_by_result = rental_details_after_change[:student_name]
+    due_date_result = rental_details_after_change[:date]
+
+    assert_equal(new_student, rented_by_result)
+    assert_equal(new_due_date, due_date_result)
+  end
+
 end

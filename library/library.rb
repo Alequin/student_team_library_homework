@@ -13,7 +13,7 @@
 ### Create a method that takes in a book title and returns only the
 # rental details for that book.
 #
-# Create a method that takes in a book title and adds it to our
+### Create a method that takes in a book title and adds it to our
 # book list (Add a new hash for the book with the student name
 # and date being left as empty strings)
 #
