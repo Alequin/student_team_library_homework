@@ -45,7 +45,6 @@ class Library
     output = "Title: #{book[:title]}\n" +
       "   Rented by: #{rental_details[:student_name]}\n" +
       "   Due date: #{rental_details[:date]}"
-
     return output
   end
 

@@ -14,7 +14,7 @@ class TestLibrary < Minitest::Test
         }
       },
       {
-        title: "stormLight archive",
+        title: "stormlight archive",
         rental_details: {
           student_name: "Andrew",
           date: "05/12/16"
@@ -47,6 +47,14 @@ class TestLibrary < Minitest::Test
       "   Due date: 01/12/16"
       result = @library.get_book_details_as_string('lord of the rings')
       assert_equal(expected, result)
+  end
+
+  def test_print_all_books_details
+    expected = @library.get_book_details_as_string("lord of the rings") + "\n\n" +
+      @library.get_book_details_as_string("stormlight archive") + "\n\n" +
+      @library.get_book_details_as_string("the name of the wind")
+    result = @library.get_all_books_details_as_string()
+    assert_equal(expected, result)
   end
 
 end
