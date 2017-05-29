@@ -41,4 +41,12 @@ class TestLibrary < Minitest::Test
     assert_equal(@books[0][:rental_details], result)
   end
 
+  def test_print_single_book_details
+    expected = "Title: lord of the rings\n"+
+      "   Rented by: Jeff\n" +
+      "   Due date: 01/12/16"
+      result = @library.print_book_details('lord of the rings')
+      assert_equal(expected, result)
+  end
+
 end
