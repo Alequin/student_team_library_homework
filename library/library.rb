@@ -7,10 +7,10 @@
 # Create a method that list all the books and their corresponding
 # details.
 #
-# Create a method that takes in a book title and returns all of the
+### Create a method that takes in a book title and returns all of the
 # information about that book.
 #
-# Create a method that takes in a book title and returns only the
+### Create a method that takes in a book title and returns only the
 # rental details for that book.
 #
 # Create a method that takes in a book title and adds it to our
@@ -37,6 +37,16 @@ class Library
   def get_rental_details_of(title)
     book = get_book_by_name(title)
     return book[:rental_details]
+  end
+
+  def get_book_details_as_string(title)
+    book = get_book_by_name(title)
+    rental_details = book[:rental_details]
+    output = "Title: #{book[:title]}\n" +
+      "   Rented by: #{rental_details[:student_name]}\n" +
+      "   Due date: #{rental_details[:date]}"
+
+    return output
   end
 
 end
