@@ -57,4 +57,18 @@ class TestLibrary < Minitest::Test
     assert_equal(expected, result)
   end
 
+  def test_add_new_book
+    pre_add_books_length = @library.get_book_count()
+    new_book = {
+      title: "Tilt",
+      rental_details: {
+        student_name: "",
+        date: ""
+      }
+    }
+    @library.add_book(new_book)
+    assert_equal(pre_add_books_length+1, @library.get_book_count())
+    assert_equal(new_book, @library.get_book_by_name(new_book[:title]))
+  end
+
 end
