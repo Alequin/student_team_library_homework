@@ -1,10 +1,10 @@
 # Model a Library as a class.
 #
-# Create a class for a Library that has an array of books. Each book
+### Create a class for a Library that has an array of books. Each book
 # should be a hash with a title, which is a string, and rental
 # details, which is another hash with a student name and due date.
 #
-# Create a method that list all the books and their corresponding
+### Create a method that list all the books and their corresponding
 # details.
 #
 ### Create a method that takes in a book title and returns all of the
@@ -45,6 +45,18 @@ class Library
     output = "Title: #{book[:title]}\n" +
       "   Rented by: #{rental_details[:student_name]}\n" +
       "   Due date: #{rental_details[:date]}"
+    return output
+  end
+
+  def get_all_books_details_as_string()
+    output = ""
+    index = 0
+    length = @books.length
+    while(index < length)
+      output += get_book_details_as_string(@books[index][:title])
+      output += "\n\n" if (index < length-1)
+      index += 1
+    end
     return output
   end
 
