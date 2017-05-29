@@ -36,4 +36,9 @@ class TestLibrary < Minitest::Test
     assert_equal(@books[0], result)
   end
 
+  def test_get_rental_details
+    result = @library.get_rental_details_of("lord_of_the_rings")
+    assert_equal(@books[0][:rental_details], result)
+  end
+
 end
