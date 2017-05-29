@@ -36,7 +36,7 @@ class TestTeam < Minitest::Test
     @team_1.add_player(new_player)
 
     assert_equal(pre_add_length+1, (@team_1.players).length)
-    assert_equal(true, @team_1.players.include?(new_player))
+    assert_equal(true, @team_1.player_in_team?(new_player))
   end
 
   def test_player_in_team__true
