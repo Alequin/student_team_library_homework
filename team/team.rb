@@ -42,5 +42,12 @@ class Team
     return @players.include?(name)
   end
 
+  def win()
+    @points += 3
+  end
+
+  def loose()
+    @points -= 3
+  end
 
 end
