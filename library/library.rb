@@ -34,4 +34,9 @@ class Library
     return nil
   end
 
+  def get_rental_details_of(title)
+    book = get_book_by_name(title)
+    return book[:rental_details]
+  end
+
 end
