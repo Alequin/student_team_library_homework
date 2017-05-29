@@ -42,12 +42,8 @@ class Team
     return @players.include?(name)
   end
 
-  def win()
-    @points += 3
-  end
-
-  def loose()
-    @points -= 3
+  def change_points_on_end_game(if_win)
+    @points += 3 if (if_win)
   end
 
 end

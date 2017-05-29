@@ -47,16 +47,16 @@ class TestTeam < Minitest::Test
     assert_equal(false, @team_2.player_in_team?("Bury"))
   end
 
-  def test_increase_points_on_win
+  def test_change_points__win
     pre_win_points = @team_1.points
-    @team_1.win()
+    @team_1.change_points_on_end_game(true)
     assert_equal(pre_win_points + 3, @team_1.points)
   end
 
-  def test_decrease_points_on_loose
-    pre_win_points = @team_1.points
-    @team_1.loose()
-    assert_equal(pre_win_points - 3, @team_1.points)
+  def test_change_points__loose
+    expected = @team_1.points
+    @team_1.change_points_on_end_game(false)
+    assert_equal(expected, @team_1.points)
   end
 
 end
