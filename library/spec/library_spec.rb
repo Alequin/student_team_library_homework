@@ -5,30 +5,35 @@ require_relative("../library.rb")
 class TestLibrary < Minitest::Test
 
   def setup
-    books = [
+    @books = [
       {
-        title: "lord_of_the_rings",
+        title: "lord of the rings",
         rental_details: {
           student_name: "Jeff",
           date: "01/12/16"
         }
       },
       {
-        title: "StormLight Archive",
+        title: "stormLight archive",
         rental_details: {
           student_name: "Andrew",
           date: "05/12/16"
         }
       },
       {
-        title: "The Name of The Wind",
+        title: "the name of the wind",
         rental_details: {
           student_name: "Sandy",
           date: "15/12/16"
         }
       },
     ]
-    @library = Library.new(books)
+    @library = Library.new(@books)
+  end
+
+  def test_get_book_by_name
+    result = @library.get_book_by_name("lord of the rings")
+    assert_equal(@books[0], result)
   end
 
 end
